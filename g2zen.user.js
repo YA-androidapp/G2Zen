@@ -28,9 +28,9 @@ for (var i in anchor) {
 
 function gmapuri_to_zenuri(uri) {
     var locationparts = get_locationparts(uri);
-    var lat = parseFloat(locationparts[0]),
-        long = parseFloat(locationparts[1]),
-        zoom = parseInt(locationparts[2]);
+    var lat = parseFloat(locationparts[0].replace(/[^0-9.-]/g, '')),
+        long = parseFloat(locationparts[1].replace(/[^0-9.-]/g, '')),
+        zoom = parseInt(locationparts[2].replace(/[^0-9]/g, ''));
     var tlat = lat + 0.00010696 * lat - 0.000017467 * long - 0.0046020,
         tlong = long + 0.000046047 * lat + 0.000083049 * long - 0.010041;
     var zlat = tlat * 3600 * 1000,
