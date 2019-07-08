@@ -5,6 +5,8 @@
 // @include	https://www.google.co.jp/maps*
 // ==/UserScript==
 
+// Copyright (c) 2019 YA-androidapp(https://github.com/YA-androidapp) All rights reserved.
+
 var gUriPrefix = 'https://www.google.co.jp/maps'
 
 if (((window.location.href).startsWith(gUriPrefix)) && ((window.location.href).indexOf('/@') > -1)) {
